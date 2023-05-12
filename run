@@ -19,6 +19,8 @@ source activate func_sim
 cd /home/acq21xw/Func_sim
 # 安装依赖环境
 pip install -r requirements.txt
+pip install wandb
+wandb login
 # 进入代码执行目录
 cd func_simCIFAR10
 # 执行以下工作流程

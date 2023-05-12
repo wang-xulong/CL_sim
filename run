@@ -16,12 +16,11 @@ module load cuDNN/7.6.4.38-gcccuda-2019b
 # 进入conda环境
 source activate func_sim
 # 切换目录
-cd /home/acq21xw/Func_sim
+cd /home/acq21xw/CL_sim
 # 安装依赖环境
 pip install -r requirements.txt
 pip install wandb
 wandb login
-# 进入代码执行目录
-cd func_simCIFAR10
+
 # 执行以下工作流程
 python run2.1.py > log.txt 2>&1

@@ -23,9 +23,9 @@ config = Namespace(
     train_bs=128,
     test_bs=128,
     lr_init=0.001,
-    max_epoch=10,
-    run_times=3,
-    patience=1
+    max_epoch=500,
+    run_times=10,
+    patience=20
 )
 
 accuracy_list1 = []  # multiple run

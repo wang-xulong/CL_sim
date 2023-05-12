@@ -123,10 +123,10 @@ with open('result.csv', 'w', encoding='UTF8' , newline='') as f:
 
     for i in range(10):
         writer.writerow(['1', '2'])
-        writer.writerows(accuracy_array1[i])
-        writer.writerows(accuracy_array2[i])
-        writer.writerows(accuracy_array3[i])
-        writer.writerows(accuracy_array4[i])
+        writer.writerows(accuracy_array1[i,:,:])
+        writer.writerows(accuracy_array2[i,:,:])
+        writer.writerows(accuracy_array3[i,:,:])
+        writer.writerows(accuracy_array4[i,:,:])
 
 
 

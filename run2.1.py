@@ -23,8 +23,8 @@ config = Namespace(
     train_bs=128,
     test_bs=128,
     lr_init=0.001,
-    max_epoch=1,
-    run_times=2,
+    max_epoch=10,
+    run_times=3,
     patience=1
 )
 

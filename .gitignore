@@ -6,12 +6,13 @@ __pycache__/
 *.idea
 # C extensions
 *.so
-*.log.txt
 *.pth
 *.pt
 *.csv
-*.png
+*.out
 
+*.png
+*.txt
 
 
 # Distribution / packaging

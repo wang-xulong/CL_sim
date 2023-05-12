@@ -7,7 +7,7 @@ import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 from torchvision.models.resnet import resnet50
-import json
+import csv
 
 from metrics import compute_acc_fgt
 from util import trainES, get_Cifar10, test
@@ -117,16 +117,17 @@ print('----------- Avg_End_Acc {} Avg_End_Fgt {} Avg_Acc {}-----------'.format(a
 
 # save func_sim and metrics
 np.savetxt("func_score.csv", fun_score, delimiter=',')
-result = {
-    "1" : accuracy_array1,
-    "2" : accuracy_array2,
-    "3" : accuracy_array3,
-    "4" : accuracy_array4
-}
-Result = json.dumps(result)
-f = open("experiments_result","w")
-f.write(Result)
-f.close()
+# save result
+with open('result.csv', 'w', encoding='UTF8' , newline='') as f:
+    writer = csv.writer(f)
+
+    for i in range(10):
+        writer.writerow(['1', '2'])
+        writer.writerows(accuracy_array1[i])
+        writer.writerows(accuracy_array2[i])
+        writer.writerows(accuracy_array3[i])
+        writer.writerows(accuracy_array4[i])
+
 
 
 

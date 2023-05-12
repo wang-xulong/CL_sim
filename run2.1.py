@@ -7,7 +7,7 @@ import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 from torchvision.models.resnet import resnet50
-import csv
+import json
 
 from metrics import compute_acc_fgt
 from util import trainES, get_Cifar10, test
@@ -15,11 +15,11 @@ from util import trainES, get_Cifar10, test
 # ------------------------------------ step 0/5 : initialise hyper-parameters ------------------------------------
 basic_task = 0  # count from 0
 experience = 5
-train_bs = 64
-test_bs = 64
+train_bs = 128
+test_bs = 128
 lr_init = 0.001
-max_epoch = 2
-run_times = 1
+max_epoch = 1
+run_times = 2
 patience = 1
 
 accuracy_list1 = [] # multiple run
@@ -117,6 +117,16 @@ print('----------- Avg_End_Acc {} Avg_End_Fgt {} Avg_Acc {}-----------'.format(a
 
 # save func_sim and metrics
 np.savetxt("func_score.csv", fun_score, delimiter=',')
+result = {
+    "1" : accuracy_array1,
+    "2" : accuracy_array2,
+    "3" : accuracy_array3,
+    "4" : accuracy_array4
+}
+Result = json.dumps(result)
+f = open("experiments_result","w")
+f.write(Result)
+f.close()
 
 
 

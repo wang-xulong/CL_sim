@@ -190,8 +190,8 @@ def get_Cifar10(train_bs=128, test_bs=128):
         train_data = MyDataset(txt_path=train_txt_path, transform=trainTransform)
         test_data = MyDataset(txt_path=test_txt_path, transform=testTransform)
         # 构建CLDataLoader
-        train_loader = DataLoader(dataset=train_data, batch_size=train_bs, shuffle=True)
-        test_loader = DataLoader(dataset=test_data, batch_size=test_bs)
+        train_loader = DataLoader(dataset=train_data, batch_size=train_bs, shuffle=True, num_workers=4, pin_memory=True, prefetch_factor=train_bs*2)
+        test_loader = DataLoader(dataset=test_data, batch_size=test_bs, num_workers=4, pin_memory=True, prefetch_factor=test_bs*2)
         # 添加到stream list中
         train_stream.append(train_loader)
         test_stream.append(test_loader)

@@ -7,7 +7,6 @@ import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 from torchvision.models.resnet import resnet50
-import csv
 import wandb
 import datetime
 from argparse import Namespace

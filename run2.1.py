@@ -14,6 +14,8 @@ from argparse import Namespace
 from metrics import compute_acc_fgt
 from util import trainES, get_Cifar10, test
 
+import csv
+
 # ------------------------------------ step 0/5 : initialise hyper-parameters ------------------------------------
 config = Namespace(
     project_name='CIFAR10',

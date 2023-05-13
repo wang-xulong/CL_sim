@@ -38,7 +38,7 @@ def trainES(train_data, test_data, model, criterion, optimizer, max_epoch, devic
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            if k == 1 and func_sim:
+            if k == 0 and func_sim:
                 new_task_first_loss = loss.item()
             # RECORD training loss
             train_losses.append(loss.item())

@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --comment=cifar100
-#SBATCH --mem=16G
+#SBATCH --comment=cifar10
+#SBATCH --mem=32G
 #SBATCH --account=dcs-acad4
 #SBATCH --partition=dcs-acad
 #SBATCH --time=6-0:0:0
